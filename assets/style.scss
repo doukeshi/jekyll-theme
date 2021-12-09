@@ -1,0 +1,17 @@
+---
+#  rougify style github >> _sass/highligh.scss
+---
+;
+
+body {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+img {
+  max-width: 100%;
+}
+
+@import "highligh";

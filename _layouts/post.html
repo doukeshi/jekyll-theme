@@ -2,4 +2,17 @@
 layout: default
 ---
 
-{{ content }}
+<h1>{{ page.title }}</h1>
+<p>{{ page.date | date: "%F" }}</p>
+<hr>
+
+<article>
+  {{ content }}
+</article>
+
+{% if page.tags.size > 0 %}
+  <p>tags: {% for tag in page.tags %} #{{ tag }} {% endfor %}</p>
+{% endif %}
+
+<br>
+{% include footer.html %}

@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<h1>{{ site.title }}</h1>
+<hr>
+<br>
+
+{{ content }}
+<br>
+
+{% assign pages = site.pages | where_exp: "page", "page.title != nil" %}
+{% if pages.size > 0 %}
+<h2>Pages:</h2>
+  <ul>
+    {% for page in pages %}
+      <li><a href="{{ page.url | relative_url }}">{{ page.title | escape }}</a></li>
+    {% endfor %}
+  </ul>
+<br>
+{% endif %}
+
+{% assign posts = site.posts %}
+{% if posts.size > 0 %}
+<h2>Posts:</h2>
+  <ul>
+    {% for post in posts %}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
+    {% endfor %}
+  </ul>
+<br>
+{% endif %}
+
+<br>

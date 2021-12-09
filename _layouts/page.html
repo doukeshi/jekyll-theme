@@ -2,4 +2,12 @@
 layout: default
 ---
 
-{{ content }}
+<h1>{{ page.title | default: site.title }}</h1>
+<hr>
+
+<article>
+  {{ content }}
+</article>
+
+<br>
+{% include footer.html %}
